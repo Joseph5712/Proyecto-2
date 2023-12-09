@@ -40,7 +40,7 @@ class AuthController extends BaseController {
                 // Rol de usuario normal
                 $session = session();
 			    $session->set($data);
-                return redirect()->to('user/dashboard');
+                return redirect()->to('user');
             }
         } else {
             // Muestra un mensaje de error o redirige a la página de inicio de sesión con un mensaje de error

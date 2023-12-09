@@ -26,7 +26,7 @@ class categoryController extends BaseController {
 
     public function edit($id){
         $categoryModel = model(CategoryModel::class);
-        $data['categories'] = $categoryModel->where('id', $id)->first();
+        $data['category'] = $categoryModel->where('id', $id)->first();
         $data['pageTitle'] = 'Category Page';
         $data['actionTitle'] = 'Edit Category';
         $content = view('category/form',$data);
@@ -44,13 +44,13 @@ class categoryController extends BaseController {
         } else {
             $categoryModel->insert($data);
         }
-        return $this->response->redirect(site_url('/careers'));
+        return $this->response->redirect(site_url('/category'));
     }
 
     public function delete($id = null){
         $categoryModel = model(CategoryModel::class);
         $categoryModel->where('id', $id)->delete();
 
-        return $this->response->redirect(site_url('/careers'));
+        return $this->response->redirect(site_url('/category'));
     }
 }
