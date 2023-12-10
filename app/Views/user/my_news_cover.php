@@ -1,1 +1,1 @@
-<h1>usuario normal</h1>
+<h1>Aqui se van a mostrar todas las noticias</h1>

@@ -24,6 +24,7 @@ class AuthController extends BaseController {
         // Verifica si el usuario existe y la contraseña es válida
         if (!empty($userData) && $password === $userData['password']) {
             $data = [
+                "id" => $userData['id'],
                 "email" => $userData['email'],
                 "first_name" => $userData['first_name'],
                 "last_name" => $userData['last_name'],

@@ -9,6 +9,7 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 
+
 /**
  * Class BaseController
  *
@@ -62,6 +63,14 @@ abstract class BaseController extends Controller
 
         echo view('nav/nav_bar', $parameters);//nav_bar
         echo $view;// las vistas de donde van las noticias o categorias de los usuarios
-        
     }
+    //public function renderTemplate2($view1,$view2, $parameters = []) {
+    //    $session = session();
+    //    $parameters['showLogo'] =  isset($parameters['showLogo'])? $parameters['showLogo'] : false;
+    //    $parameters['user'] = $session->get('user');
+//
+    //    echo view('nav/nav_bar', $parameters);//nav_bar
+    //    echo $view1;
+    //    echo $view2;// las vistas de donde van las noticias o categorias de los usuarios
+    //}
 }
