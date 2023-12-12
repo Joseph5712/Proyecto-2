@@ -12,7 +12,7 @@ class NewsModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ['title','short_description','perman_link','date','img_url','news_source_id','user_id','category_id'];
 
     // Dates
     protected $useTimestamps = false;

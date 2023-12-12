@@ -73,4 +73,5 @@ abstract class BaseController extends Controller
     //    echo $view1;
     //    echo $view2;// las vistas de donde van las noticias o categorias de los usuarios
     //}
+    
 }
