@@ -77,12 +77,37 @@ class CategoryController extends BaseController {
         if (!$session->get('id')) {
             return redirect()->to('/');
         }
-
+    
+        // Carga el modelo CategoryModel
         $categoryModel = model(CategoryModel::class);
-        $categoryModel->where('id', $id)->delete();
+    
+        // Carga el modelo NewsSourcesModel
+        $newsSourcesModel = model(NewsSourcesModel::class);
+        $newsSourcesModel = new \App\Models\NewsSourcesModel();
 
-        return $this->response->redirect(site_url('/category'));
+    
+        // Asegúrate de que el modelo se haya cargado correctamente
+        if (!$newsSourcesModel) {
+            // Manejar el caso en el que el modelo no se haya cargado correctamente
+            return redirect()->to('/category')->with('error', 'Error al cargar el modelo de fuentes de noticias.');
+        }
+    
+        // Verifica si hay fuentes de noticias asociadas a esta categoría
+        $newsCount = $newsSourcesModel->where('category_id', $id)->countAllResults();
+    
+        if ($newsCount > 0) {
+            // Hay fuentes de noticias asociadas, muestra un aviso y redirige
+            return redirect()->to('/category')->with('error', 'No se puede eliminar la categoría porque tiene fuentes de noticias asociadas.');
+        }
+    
+        // No hay fuentes de noticias asociadas, procede con la eliminación
+        $categoryModel->where('id', $id)->delete();
+    
+        return redirect()->to('/category')->with('success', 'Categoría eliminada correctamente.');
     }
+    
+    
+    
     public function validateSession()
     {
         $session = session();

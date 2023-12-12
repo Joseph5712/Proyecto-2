@@ -17,8 +17,6 @@ $routes->post('/create_user', 'AuthController::save_user');
 $routes->post('/user/search', 'NewsController::search');
 
 
-
-
 $routes->get('/', 'AuthController::index');
 $routes->get('/category', 'categoryController::index');
 $routes->get('/category/create', 'categoryController::create');

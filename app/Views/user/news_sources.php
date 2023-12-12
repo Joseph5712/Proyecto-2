@@ -25,7 +25,11 @@
                 </div>
             </div>
             <div class="row">
+            <div class="row btn-container">
                 <div class="col-12">
+                    <a href="<?= site_url('/user'); ?>" class="btn btn-secondary">Atrás</a>
+                </div>
+            </div>
                     <table class="table table-bordered">
                         <thead class="thead-dark">
                             <tr>
@@ -57,7 +61,7 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
+            
         </div>
     </section>
 </main>

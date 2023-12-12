@@ -30,6 +30,7 @@
             <div class="row btn-container">
                 <div class="col-12">
                     <a class="btn btn-primary" href="<?= site_url('/category/create')?>">New Category</a>
+                    <a href="<?= site_url('/user'); ?>" class="btn btn-secondary">Atrás</a>
                 </div>
             </div>
             <div class="row">
